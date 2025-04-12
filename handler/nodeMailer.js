@@ -62,57 +62,6 @@ const sendMail = async (to) => {
     }
 };
 
-// -----------------
-// const sendMail = async (email) => {
-//     const hbs = (await import('nodemailer-express-handlebars')).default;
-//     const otpCode = Math.floor(100000 + Math.random() * 900000);
-//     const currentDate = new Date().toLocaleDateString('en-US', {
-//         day: '2-digit',
-//         month: 'short',
-//         year: 'numeric',
-//     });
-
-//     const transporter = nodemailer.createTransport({
-//         host: 'smtp.hostinger.com',
-//         port: 465,
-//         secure: true,
-//         auth: {
-//             user: process.env.NODEMAILER_USER,
-//             pass: process.env.NODEMAILER_PASS,
-//         }
-//     });
-
-//     const handlebarOptions = {
-//         viewEngine: {
-//             extName: ".handlebars",
-//             partialsDir: path.resolve("./public"),
-//             defaultLayout: false
-//         },
-//         viewPath: path.resolve("./public"),
-//         extName: ".handlebars"
-//     };
-
-//     transporter.use("compile", hbs(handlebarOptions));
-
-//     const client = {
-//         from: process.env.NODEMAILER_USER,
-//         to: email,
-//         subject: 'Email Verification',
-//         template: "email",
-//         context: {
-//             otp: otpCode,
-//             currentDate: currentDate
-//         }
-//     };
-
-//     try {
-//         await transporter.sendMail(client);
-//         return { success: true, otpCode: otpCode };
-//     } catch (error) {
-//         return { success: false, error: error.message };
-//     }
-// }
-// ------------------
 
 // Email validation and error handling
 class EmailSendError extends Error {
