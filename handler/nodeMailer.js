@@ -43,15 +43,14 @@ const sendMail = async (to) => {
     const otpCode = generateOTP();
     try {
         const mailOptions = {
-            // from: 'Sophwe Food <artefinoproject@gmail.com>',
-            from: 'Adam Clinic App <artefinoproject@gmail.com>',
+            from: 'User Data App <abdurabb00@gmail.com>',
             to: to,
             subject: 'OTP Verification',
             template: 'otp-verification',
             context: {
                 otpCode: otpCode,
                 expirationTime: 3,
-                logo: "https://res.cloudinary.com/fouvtycloud/image/upload/v1732873616/my_folder/zlbzjztaii79nfkjjq6n.jpg"
+                logo: ""
             }
         };
         const result = await transporter.sendMail(mailOptions);

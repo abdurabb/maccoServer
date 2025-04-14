@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const path = require("path")
 
 
-const { green, yellow } = require("colors")
+
 dotenv.config({ path: "/.env" })
 app.use(bodyParser.json({ limit: "1000mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "1000mb", extended: true }));
